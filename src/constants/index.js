@@ -242,7 +242,7 @@ const navLinks = [
   
   const socialImgs = [
     {
-      name: "https://www.instagram.com/saqlain_stuff?igsh=YjlkeDBqZHV3Z2o4",
+      name: "https://www.linkedin.com/in/alfiya-khan-54133530b/",
       imgPath: "/images/insta.png",
     },
     {
@@ -254,7 +254,7 @@ const navLinks = [
       imgPath: "/images/x.png",
     },
     {
-      name: "https://www.linkedin.com/in/saqlain-supariwala/",
+      name: "https://www.linkedin.com/in/alfiya-khan-54133530b/",
       imgPath: "/images/linkedin.png",
     },
   ];

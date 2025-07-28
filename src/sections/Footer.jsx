@@ -29,7 +29,7 @@ const Footer = () => {
 
         {/* Right Section - Copyright */}
         <div className='flex flex-col gap-2 items-end'>
-          <p className='text-white-50'>© 2024 Saqlain | Stuff</p>
+          <p className='text-white-50'>© 2024 Alfiya | Khan</p>
           <p className='text-blue-50 text-sm'>All rights reserved</p>
         </div>
       </div>
