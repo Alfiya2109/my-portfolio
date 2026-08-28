@@ -1,5 +1,7 @@
 # 🌟 3D Developer Portfolio - Alfiya Khan
 
+🔗 **Live Website Demo**: [https://my-portfolio-one-teal-18.vercel.app/](https://my-portfolio-one-teal-18.vercel.app/)
+
 A modern, interactive 3D developer portfolio website built with **React 19, Three.js, React Three Fiber, GSAP, and Tailwind CSS**.
 
 ---
