@@ -5,9 +5,48 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alfiya | Portfolio</title>
+    <script>
+      window.addEventListener('error', function(event) {
+        var div = document.createElement('div');
+        div.id = 'debug-error-overlay';
+        div.style.position = 'fixed';
+        div.style.top = '0';
+        div.style.left = '0';
+        div.style.width = '100%';
+        div.style.height = '100%';
+        div.style.backgroundColor = 'rgba(0,0,0,0.95)';
+        div.style.color = '#ff4a4a';
+        div.style.padding = '30px';
+        div.style.zIndex = '999999';
+        div.style.fontSize = '18px';
+        div.style.fontFamily = 'monospace';
+        div.style.overflow = 'auto';
+        div.innerHTML = '<h1 style="color: #ff4a4a; font-size: 28px; margin-bottom: 20px;">Runtime Error</h1><pre style="white-space: pre-wrap; font-size: 16px;">' + event.message + '\n' + event.filename + ':' + event.lineno + '\n\n' + (event.error ? event.error.stack : '') + '</pre>';
+        document.body.appendChild(div);
+      });
+      window.addEventListener('unhandledrejection', function(event) {
+        var div = document.createElement('div');
+        div.id = 'debug-reject-overlay';
+        div.style.position = 'fixed';
+        div.style.top = '0';
+        div.style.left = '0';
+        div.style.width = '100%';
+        div.style.height = '100%';
+        div.style.backgroundColor = 'rgba(0,0,0,0.95)';
+        div.style.color = '#ff4a4a';
+        div.style.padding = '30px';
+        div.style.zIndex = '999999';
+        div.style.fontSize = '18px';
+        div.style.fontFamily = 'monospace';
+        div.style.overflow = 'auto';
+        div.innerHTML = '<h1 style="color: #ff4a4a; font-size: 28px; margin-bottom: 20px;">Unhandled Promise Rejection</h1><pre style="white-space: pre-wrap; font-size: 16px;">' + event.reason + '\n\n' + (event.reason ? event.reason.stack : '') + '</pre>';
+        document.body.appendChild(div);
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
