@@ -48,13 +48,13 @@ useGSAP(()=>{
                     </span>
                 </h1>
                 {/* <p className='text-white-50 md:text-xl relative z-10 pointer-events-auto'>
-                   Hi, I am saqlain, a Web-developer with passion for code 
+                   Hi, I am Alfiya Khan, a Full-Stack & Generative AI Developer with passion for code 
                 </p> */}
                 <h1>into Real Project</h1>
                 <h1>that Deliver results </h1>
             </div>
             <p className='text-white-50 md:text-xl relative z-10 pointer-events-auto'>
-                   Hi, I am saqlain, a Web-developer with passion for code 
+                   Hi, I am Alfiya Khan, a Full-Stack & Generative AI Developer with passion for code 
                 </p>
                <Button className="md:w-80 md:h-16 w-60 h-12" id='button' text='See My'/> 
         </div>
