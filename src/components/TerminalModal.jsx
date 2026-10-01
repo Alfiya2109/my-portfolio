@@ -101,6 +101,7 @@ I transform complex architectural challenges into fluid, user-centric digital ex
         newHistory.push({
           type: 'output',
           text: `📬 Contact Info:
+  • WhatsApp: +91 7208048534 (https://wa.me/917208048534)
   • Email: alfiyakhan0921@gmail.com
   • LinkedIn: https://www.linkedin.com/in/alfiya-khan-dev/
   • GitHub: https://github.com/Alfiya2109
@@ -120,7 +121,7 @@ I transform complex architectural challenges into fluid, user-centric digital ex
           type: 'output',
           text: `🎉 Let's build something remarkable together!
 I am actively open for software engineering roles, full-time positions, and enterprise projects.
-Feel free to reach out via Email (alfiyakhan0921@gmail.com) or LinkedIn!`,
+Feel free to reach out via WhatsApp (+91 7208048534), Email (alfiyakhan0921@gmail.com), or LinkedIn!`,
         });
         break;
 

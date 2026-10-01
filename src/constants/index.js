@@ -276,14 +276,9 @@ const navLinks = [
       imgPath: "/images/code.svg",
     },
     {
-      name: "Instagram",
-      url: "https://www.instagram.com/",
-      imgPath: "/images/insta.png",
-    },
-    {
-      name: "X",
-      url: "https://x.com",
-      imgPath: "/images/x.png",
+      name: "WhatsApp",
+      url: "https://wa.me/917208048534",
+      imgPath: "/images/whatsapp.svg",
     },
   ];
   
