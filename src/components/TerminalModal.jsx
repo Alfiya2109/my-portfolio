@@ -109,7 +109,7 @@ Direct link: /Alfiya_Khan_Resume.pdf`,
      → GitHub: https://github.com/Alfiya2109/leave-management-portal
 
   6. 3D Interactive WebGL Portfolio
-     → Live: https://alfiya-portfolio.vercel.app/
+     → Live: https://my-portfolio-one-teal-18.vercel.app/
      → GitHub: https://github.com/Alfiya2109/my-portfolio`,
         });
         break;
