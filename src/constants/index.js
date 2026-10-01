@@ -280,6 +280,11 @@ const navLinks = [
       url: "https://wa.me/917208048534",
       imgPath: "/images/whatsapp.svg",
     },
+    {
+      name: "Email",
+      url: "mailto:alfiyakhan0921@gmail.com",
+      imgPath: "/images/mail.svg",
+    },
   ];
   
   export {
