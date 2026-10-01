@@ -112,30 +112,35 @@ const navLinks = [
     {
       name: "React Developer",
       modelPath: "/models/react_logo-transformed.glb",
+      imgPath: "/images/logos/react.png",
       scale: 1,
       rotation: [0, 0, 0],
     },
     {
       name: "Python Developer",
       modelPath: "/models/python-transformed.glb",
+      imgPath: "/images/logos/python.svg",
       scale: 0.8,
       rotation: [0, 0, 0],
     },
     {
       name: "Backend Developer",
       modelPath: "/models/node-transformed.glb",
+      imgPath: "/images/logos/node.png",
       scale: 5,
       rotation: [0, -Math.PI / 2, 0],
     },
     {
       name: "Interactive Developer",
       modelPath: "/models/three.js-transformed.glb",
+      imgPath: "/images/logos/three.png",
       scale: 0.05,
       rotation: [0, 0, 0],
     },
     {
       name: "Project Manager",
       modelPath: "/models/git-svg-transformed.glb",
+      imgPath: "/images/logos/git.svg",
       scale: 0.05,
       rotation: [0, -Math.PI / 4, 0],
     },
@@ -242,20 +247,24 @@ const navLinks = [
   
   const socialImgs = [
     {
-      name: "https://www.linkedin.com/in/alfiya-khan-dev/",
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/alfiya-khan-dev/",
+      imgPath: "/images/linkedin.png",
+    },
+    {
+      name: "GitHub",
+      url: "https://github.com/Alfiya2109",
+      imgPath: "/images/code.svg",
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/",
       imgPath: "/images/insta.png",
     },
     {
-      name: "fb",
-      imgPath: "/images/fb.png",
-    },
-    {
-      name: "x",
+      name: "X",
+      url: "https://x.com",
       imgPath: "/images/x.png",
-    },
-    {
-      name: "https://www.linkedin.com/in/alfiya-khan-dev/",
-      imgPath: "/images/linkedin.png",
     },
   ];
   

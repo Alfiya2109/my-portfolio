@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { navLinks } from '../constants'
 
 const NavBar = () => {
-    const [scrolled, setSrolled] = useState(false)
+    const [scrolled, setScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     useEffect(()=>{
         const handleScroll = ()=>{
             const isScrolled = window.scrollY > 10;
-            setSrolled(true)
+            setScrolled(isScrolled);
         }
 
         window.addEventListener('scroll', handleScroll)
@@ -18,27 +19,72 @@ const NavBar = () => {
     return (
         <header className={`navbar ${scrolled ? 'scrolled' : 'not-scrolled'} `}>
             <div className='inner'>
-                <a href="#hero" className="logo">
-                  Alfiya | Khan
+                <a href="#hero" className="logo flex items-center gap-1.5 group">
+                    <span className="font-display font-extrabold tracking-tight text-white group-hover:text-purple-300 transition-colors">Alfiya</span>
+                    <span className="text-fuchsia-400 font-bold">.</span>
+                    <span className="font-calligraphy text-2xl text-purple-300 font-semibold tracking-wide -rotate-3 transition-transform group-hover:rotate-0">dev</span>
                 </a>
                 <nav className='desktop'>
                     <ul>
                         {navLinks.map(({ link , name})=>(
                             <li key={name} className='group'>
-                                <a href={link}>
+                                <a href={link} className="hover:text-purple-300 transition-colors">
                                     <span>{name}</span>
-                                    <span className='underline'/>
+                                    <span className='underline bg-gradient-to-r from-purple-400 to-fuchsia-400'/>
                                 </a>
                             </li>
                         ))}
                     </ul>
                 </nav>
-                <a href="#contact" className='contact-btn group'>
-                    <div className="inner">
-                        <span>Contact Me</span>
-                    </div>
-                </a>
+
+                <div className='flex items-center gap-3'>
+                    <a 
+                        href="#contact" 
+                        className='contact-btn group hidden sm:flex border border-purple-500/40 hover:border-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.2)]'
+                    >
+                        <div className="inner">
+                            <span className="text-white group-hover:text-purple-200 transition-colors">Contact Me</span>
+                        </div>
+                    </a>
+
+                    {/* Mobile Menu Hamburger Button */}
+                    <button
+                        onClick={() => setMobileMenuOpen(prev => !prev)}
+                        className='lg:hidden p-2.5 rounded-lg border border-purple-500/30 bg-black-100/90 text-white flex flex-col justify-center items-center gap-1.5 cursor-pointer z-50'
+                        aria-label="Toggle navigation menu"
+                    >
+                        <span className={`w-5 h-0.5 bg-white transition-transform duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+                        <span className={`w-5 h-0.5 bg-white transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`} />
+                        <span className={`w-5 h-0.5 bg-white transition-transform duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+                    </button>
+                </div>
             </div>
+
+            {/* Mobile Menu Drawer */}
+            {mobileMenuOpen && (
+                <div className='lg:hidden fixed top-full left-0 w-full bg-black-100/95 border-b border-purple-500/20 backdrop-blur-xl p-6 flex flex-col gap-5 animate-fadeIn z-40 shadow-2xl'>
+                    <ul className='flex flex-col gap-4'>
+                        {navLinks.map(({ link, name }) => (
+                            <li key={name}>
+                                <a
+                                    href={link}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className='text-white-50 hover:text-purple-300 text-lg font-medium transition-colors block py-1'
+                                >
+                                    {name}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                    <a
+                        href="#contact"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className='w-full py-3 rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white font-semibold text-center mt-2 shadow-[0_0_15px_rgba(168,85,247,0.35)]'
+                    >
+                        Contact Me
+                    </a>
+                </div>
+            )}
         </header>
     )
 }
