@@ -165,13 +165,13 @@ section {
     }
 
     .contact-btn {
-      @apply flex;
+      @apply flex items-center px-5 py-2 rounded-full border border-purple-500/40 bg-purple-950/40 hover:bg-purple-900/60 hover:border-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.25)] transition-all duration-300 backdrop-blur-md cursor-pointer;
 
       .inner {
-        @apply px-5 py-2 rounded-lg bg-white text-black group-hover:bg-black-50 transition-colors duration-300;
+        @apply flex items-center;
 
         span {
-          @apply group-hover:text-white transition-colors duration-300;
+          @apply text-purple-100 group-hover:text-white font-tech text-sm font-semibold tracking-wide transition-colors duration-300;
         }
       }
     }

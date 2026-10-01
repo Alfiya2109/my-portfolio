@@ -40,10 +40,10 @@ const NavBar = () => {
                 <div className='flex items-center gap-3'>
                     <a 
                         href="#contact" 
-                        className='contact-btn group hidden sm:flex border border-purple-500/40 hover:border-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.2)]'
+                        className='contact-btn group hidden sm:flex'
                     >
                         <div className="inner">
-                            <span className="text-white group-hover:text-purple-200 transition-colors">Contact Me</span>
+                            <span>Contact Me</span>
                         </div>
                     </a>
 

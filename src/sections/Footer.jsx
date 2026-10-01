@@ -5,13 +5,10 @@ import AnimatedSignature from '../components/AnimatedSignature';
 const Footer = () => {
   return (
     <footer className="footer relative">
-      {/* Animated Handwriting Stroke Signature for Alfiya Khan */}
-      <AnimatedSignature />
-
-      <div className="footer-container border-t border-white/5 pt-8">
-        {/* Left Section - Terms & Conditions */}
+      <div className="footer-container border-t border-white/10 pt-10 pb-8">
+        {/* Left Section - Terms & Policies */}
         <div className="flex flex-col gap-2">
-          <p className="text-white-50">Terms & Conditions</p>
+          <p className="text-white-50 font-medium">Terms & Conditions</p>
           <p className="text-blue-50 text-sm hover:text-purple-300 transition-colors cursor-pointer">Privacy Policy</p>
           <p className="text-blue-50 text-sm hover:text-purple-300 transition-colors cursor-pointer">Cookie Policy</p>
         </div>
@@ -32,8 +29,11 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Right Section - Copyright */}
-        <div className="flex flex-col gap-1.5 items-center md:items-end">
+        {/* Right Section - Signature directly above Alfiya Khan */}
+        <div className="flex flex-col gap-2 items-center md:items-end">
+          {/* Animated Calligraphy Signature above Alfiya Khan */}
+          <AnimatedSignature />
+
           <p className="text-white-50 flex items-center gap-1.5 flex-wrap justify-center md:justify-end">
             © {new Date().getFullYear()}{' '}
             <span className="font-display font-bold text-white">Alfiya Khan</span>{' '}

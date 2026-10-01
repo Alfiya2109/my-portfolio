@@ -4,47 +4,47 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Authentic cursive calligraphy glyph paths for "Alfiya" with elegant flourish
+// Authentic cursive calligraphy glyph paths for "Alfiya"
 const glyphPaths = [
   {
     id: 'A',
-    // Capital Cursive 'A' with grand looping entry and flowing cross-stroke
-    d: 'M 95 210 C 80 165, 98 100, 138 78 C 162 65, 180 82, 168 128 C 150 175, 125 212, 155 204 C 182 196, 195 162, 206 154',
+    // Palmer/Spencerian Cursive Capital 'A'
+    d: 'M 70 170 C 95 120, 120 70, 135 60 C 145 70, 150 150, 155 195 C 152 205, 120 145, 120 135 C 120 125, 140 125, 175 140 C 190 148, 198 175, 205 170',
   },
   {
     id: 'l',
     // Cursive 'l' ascending loop with graceful descent
-    d: 'M 206 154 C 220 128, 242 72, 254 74 C 263 76, 258 114, 246 156 C 238 184, 245 202, 260 198',
+    d: 'M 205 170 C 215 130, 230 65, 242 65 C 250 65, 245 110, 235 160 C 230 185, 240 195, 252 185',
   },
   {
     id: 'f',
-    // Cursive 'f' with high ascender and deep looping descender
-    d: 'M 260 198 C 276 152, 298 68, 310 70 C 318 72, 312 122, 294 204 C 282 250, 288 260, 298 254 C 309 242, 308 212, 320 184',
+    // Cursive 'f' with high ascender and deep descender loop
+    d: 'M 252 185 C 262 135, 275 65, 285 65 C 292 65, 288 115, 275 190 C 265 245, 260 265, 272 260 C 285 255, 285 220, 295 185',
   },
   {
     id: 'i-stem',
     // Cursive 'i' upward glide and downward return
-    d: 'M 320 184 C 330 162, 344 144, 350 144 C 356 144, 348 174, 354 195 C 358 200, 366 196, 374 184',
+    d: 'M 295 185 C 305 155, 318 140, 325 142 C 330 144, 325 170, 328 190 C 332 196, 340 190, 348 175',
   },
   {
     id: 'i-dot',
     // Diamond calligraphy tittle/dot for 'i'
-    d: 'M 352 120 C 348 116, 354 112, 358 115 C 362 118, 358 124, 352 120 Z',
+    d: 'M 324 112 C 322 108, 328 105, 332 108 C 335 112, 330 116, 324 112 Z',
   },
   {
     id: 'y',
     // Cursive 'y' double arch and descending loop
-    d: 'M 374 184 C 384 162, 396 144, 406 144 C 414 144, 408 175, 412 192 C 418 198, 428 175, 438 146 C 444 170, 438 222, 428 252 C 417 268, 402 262, 407 242 C 413 220, 434 194, 452 186',
+    d: 'M 348 175 C 355 155, 368 142, 376 142 C 384 142, 378 175, 382 190 C 388 198, 398 175, 408 145 C 414 170, 408 225, 398 258 C 388 275, 372 265, 378 242 C 385 218, 405 192, 422 182',
   },
   {
     id: 'a',
     // Cursive 'a' closed oval and sweeping exit flourish
-    d: 'M 452 186 C 462 158, 488 144, 498 154 C 508 165, 492 196, 472 196 C 456 196, 466 166, 486 148 C 502 144, 510 165, 508 194 C 510 200, 524 190, 545 178',
+    d: 'M 422 182 C 430 160, 448 142, 460 150 C 470 160, 458 188, 442 188 C 428 188, 436 160, 452 145 C 466 142, 474 160, 472 185 C 474 195, 485 190, 498 180',
   },
   {
     id: 'flourish',
     // Master underline calligraphy swoosh
-    d: 'M 65 230 C 210 215, 380 248, 575 210',
+    d: 'M 90 215 C 220 200, 370 230, 520 200',
   },
 ];
 
@@ -56,7 +56,6 @@ const AnimatedSignature = () => {
     if (!svgRef.current) return;
     const paths = svgRef.current.querySelectorAll('.signature-glyph');
 
-    // 1. Reset each path with total length
     paths.forEach((path) => {
       const length = path.getTotalLength();
       path.style.strokeDasharray = `${length}`;
@@ -66,20 +65,21 @@ const AnimatedSignature = () => {
 
     const tl = gsap.timeline();
 
-    // 2. Animate stroke sequentially (pen writing out letters)
     tl.to(paths, {
       strokeDashoffset: 0,
-      duration: 1.4,
-      stagger: 0.1,
+      duration: 1.3,
+      stagger: 0.08,
       ease: 'power2.inOut',
-    })
-    // 3. Smoothly fade in luminous fill
-    .to(paths, {
-      fillOpacity: 0.95,
-      duration: 0.6,
-      stagger: 0.05,
-      ease: 'power1.out',
-    }, '-=0.4');
+    }).to(
+      paths,
+      {
+        fillOpacity: 0.95,
+        duration: 0.5,
+        stagger: 0.04,
+        ease: 'power1.out',
+      },
+      '-=0.3'
+    );
   };
 
   useEffect(() => {
@@ -95,7 +95,7 @@ const AnimatedSignature = () => {
 
     const trigger = ScrollTrigger.create({
       trigger: containerRef.current,
-      start: 'top 85%',
+      start: 'top 92%',
       onEnter: () => playAnimation(),
       once: false,
     });
@@ -106,66 +106,55 @@ const AnimatedSignature = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full flex flex-col items-center justify-center py-10 md:py-16 relative overflow-hidden group cursor-pointer"
+      className="w-44 sm:w-52 md:w-56 h-auto flex flex-col items-center md:items-end justify-center relative group cursor-pointer select-none"
       onClick={playAnimation}
-      title="Click to replay calligraphy signature"
+      title="Click to replay signature"
     >
-      {/* Decorative ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 max-w-2xl h-36 bg-purple-500/15 rounded-full blur-3xl pointer-events-none group-hover:bg-fuchsia-500/25 transition-all duration-700" />
+      {/* Ambient background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-16 bg-purple-500/15 rounded-full blur-2xl pointer-events-none group-hover:bg-fuchsia-500/25 transition-all duration-500" />
 
-      <div className="flex items-center gap-2 mb-3 z-10">
-        <span className="font-tech text-xs uppercase tracking-[0.25em] text-purple-300/80">
-          ✦ Calligraphy Signature
-        </span>
-        <span className="font-calligraphy text-base text-amber-300/80 hidden sm:inline-block">
-          (click to replay)
-        </span>
-      </div>
+      {/* SVG Signature */}
+      <svg
+        ref={svgRef}
+        id="Visual"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="50 50 490 210"
+        className="w-full h-auto max-h-16 sm:max-h-20 object-contain filter drop-shadow-[0_0_15px_rgba(192,132,252,0.6)] group-hover:scale-105 transition-transform duration-300 z-10"
+      >
+        <defs>
+          <linearGradient id="signature-grad-alfiya" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#f43f5e" />
+            <stop offset="30%" stopColor="#ec4899" />
+            <stop offset="65%" stopColor="#c084fc" />
+            <stop offset="100%" stopColor="#38bdf8" />
+          </linearGradient>
+          <filter id="sig-glow-alfiya" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
 
-      {/* SVG Signature of "Alfiya" with authentic Calligraphy Glyphs */}
-      <div className="w-full max-w-2xl px-4 flex justify-center z-10">
-        <svg
-          ref={svgRef}
-          id="Visual"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="30 50 560 220"
-          className="w-full h-auto max-h-48 md:max-h-60 object-contain filter drop-shadow-[0_0_22px_rgba(192,132,252,0.55)]"
+        <g
+          stroke="url(#signature-grad-alfiya)"
+          strokeWidth="3.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          filter="url(#sig-glow-alfiya)"
         >
-          <defs>
-            <linearGradient id="signature-grad-alfiya" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#f43f5e" />
-              <stop offset="30%" stopColor="#ec4899" />
-              <stop offset="65%" stopColor="#c084fc" />
-              <stop offset="100%" stopColor="#38bdf8" />
-            </linearGradient>
-            <filter id="sig-glow-alfiya" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="2.5" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
-
-          <g
-            stroke="url(#signature-grad-alfiya)"
-            strokeWidth="3.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            filter="url(#sig-glow-alfiya)"
-          >
-            {glyphPaths.map((glyph) => (
-              <path
-                key={glyph.id}
-                id={`glyph-${glyph.id}`}
-                className="signature-glyph"
-                d={glyph.d}
-                fill="none"
-              />
-            ))}
-          </g>
-        </svg>
-      </div>
+          {glyphPaths.map((glyph) => (
+            <path
+              key={glyph.id}
+              id={`glyph-${glyph.id}`}
+              className="signature-glyph"
+              d={glyph.d}
+              fill="none"
+            />
+          ))}
+        </g>
+      </svg>
     </div>
   );
 };
