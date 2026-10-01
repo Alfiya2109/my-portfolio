@@ -86,12 +86,18 @@ const Experience = () => {
                         <img src={card.logoPath} alt="logo" />
                       </div>
                       <div>
-                        <h3 className="font-display font-bold text-3xl text-white">{card.title}</h3>
-                        <p className="my-4 text-cyan-300/80 font-tech text-sm tracking-wider">
+                        <h3 className="font-display font-bold text-2xl md:text-3xl text-white">{card.title}</h3>
+                        {card.company && (
+                          <p className="text-purple-300 font-tech text-base font-semibold mt-1 flex items-center gap-1.5">
+                            <span>🏢</span>
+                            <span>{card.company}</span>
+                          </p>
+                        )}
+                        <p className="my-3 text-purple-200/80 font-tech text-sm tracking-wider">
                           🗓️&nbsp;{card.date}
                         </p>
                         <p className="text-[#839CB5] font-serif-italic text-lg tracking-wide">
-                          Responsibilities
+                          Key Deliverables & Responsibilities
                         </p>
                         <ul className="list-disc ms-5 mt-5 flex flex-col gap-5 text-white-50">
                           {card.responsibilities.map(
