@@ -39,6 +39,15 @@ const NavBar = () => {
 
                 <div className='flex items-center gap-3'>
                     <a 
+                        href="/Alfiya_Khan_Resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className='hidden md:flex items-center gap-1.5 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-950/30 hover:bg-purple-900/40 hover:border-purple-400 text-purple-200 hover:text-white font-tech text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-[0_0_12px_rgba(168,85,247,0.15)] cursor-pointer'
+                    >
+                        <span>📄 Resume</span>
+                    </a>
+
+                    <a 
                         href="#contact" 
                         className='contact-btn group hidden sm:flex'
                     >
@@ -76,13 +85,24 @@ const NavBar = () => {
                             </li>
                         ))}
                     </ul>
-                    <a
-                        href="#contact"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className='w-full py-3 rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white font-semibold text-center mt-2 shadow-[0_0_15px_rgba(168,85,247,0.35)]'
-                    >
-                        Contact Me
-                    </a>
+                    <div className="flex flex-col gap-2.5 mt-2">
+                        <a
+                            href="/Alfiya_Khan_Resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className='w-full py-3 rounded-lg border border-purple-500/40 bg-purple-950/60 text-purple-200 font-semibold text-center flex items-center justify-center gap-2 font-tech text-sm'
+                        >
+                            <span>📄 View Official Resume (PDF)</span>
+                        </a>
+                        <a
+                            href="#contact"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className='w-full py-3 rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white font-semibold text-center shadow-[0_0_15px_rgba(168,85,247,0.35)]'
+                        >
+                            Contact Me
+                        </a>
+                    </div>
                 </div>
             )}
         </header>

@@ -32,6 +32,7 @@ const TerminalModal = () => {
           type: 'output',
           text: `Available Commands:
   • about     - Learn about Alfiya Khan
+  • resume    - View & download official ATS resume (PDF)
   • skills    - View core technical stack
   • projects  - See featured work & live deployments
   • contact   - Get in touch details
@@ -49,6 +50,22 @@ const TerminalModal = () => {
           text: `👋 Hi! I'm Alfiya Khan — Full-Stack Software Engineer & Generative AI Developer.
 I specialize in creating end-to-end scalable web applications, enterprise ERP frontends (Odoo OWL), and Generative AI RAG pipelines with LangChain & AstraDB.
 I transform complex architectural challenges into fluid, user-centric digital experiences.`,
+        });
+        break;
+
+      case 'resume':
+      case 'cv':
+        window.open('/Alfiya_Khan_Resume.pdf', '_blank');
+        confetti({
+          particleCount: 70,
+          spread: 60,
+          origin: { y: 0.6 },
+          colors: ['#c084fc', '#f43f5e', '#38bdf8', '#fbbf24']
+        });
+        newHistory.push({
+          type: 'output',
+          text: `📄 Opening Alfiya Khan's Official ATS Resume (PDF) in a new tab...
+Direct link: /Alfiya_Khan_Resume.pdf`,
         });
         break;
 

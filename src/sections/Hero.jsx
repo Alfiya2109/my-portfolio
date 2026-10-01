@@ -70,11 +70,15 @@ const Hero = () => {
         <header className='flex flex-col justify-center w-full xl:w-1/2 md:px-20 px-5 relative z-20'>
           <div className='flex flex-col gap-6 md:gap-7'>
             <div className="flex items-center gap-3 flex-wrap">
-              <span className="hero-badge font-tech tracking-wider uppercase text-xs text-purple-300 border border-purple-500/30 bg-purple-950/30 shadow-[0_0_15px_rgba(168,85,247,0.2)]">
-                ✦ Available for Opportunities
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-tech tracking-wider uppercase text-xs text-emerald-300 border border-emerald-500/30 bg-emerald-950/40 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span>Available for Global Remote &amp; Full-Time Roles</span>
               </span>
-              <span className="font-calligraphy text-xl md:text-2xl text-amber-300 font-medium -rotate-2 hidden sm:inline-block">
-                ~ handcrafted with code &amp; AI ✦
+              <span className="font-tech text-xs text-purple-300/80 hidden sm:inline-block">
+                🌍 Sweden (CET) &amp; India (IST)
               </span>
             </div>
 
@@ -100,14 +104,32 @@ const Hero = () => {
             </p>
             
             <div className='flex flex-wrap items-center gap-3.5 relative z-10'>
-              <Button className="md:w-64 md:h-14 w-56 h-12" id='work' text='Explore My Work'/> 
+              <Button className="md:w-52 md:h-14 w-44 h-12" id='work' text='Explore Work'/> 
               
+              <a
+                href="/Alfiya_Khan_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  confetti({
+                    particleCount: 70,
+                    spread: 60,
+                    origin: { y: 0.7 },
+                    colors: ['#a855f7', '#ec4899', '#38bdf8', '#c084fc']
+                  });
+                }}
+                className="px-5 py-3.5 md:px-6 md:py-4 rounded-xl border border-purple-500/40 bg-purple-950/50 text-purple-100 font-tech font-semibold uppercase tracking-wider text-xs md:text-sm hover:bg-purple-600/30 hover:border-purple-300 transition-all duration-300 backdrop-blur-md flex items-center gap-2 cursor-pointer group shadow-[0_0_20px_rgba(168,85,247,0.25)]"
+              >
+                <span>📄 View Resume (PDF)</span>
+                <span className="group-hover:translate-y-0.5 transition-transform">↓</span>
+              </a>
+
               <button
                 onClick={handleDownloadCV}
-                className="px-5 py-3 md:px-6 md:py-4 rounded-xl border border-purple-500/40 bg-purple-950/40 text-purple-200 font-semibold uppercase tracking-wider text-xs md:text-sm hover:bg-purple-500/20 hover:border-purple-300 transition-all duration-300 backdrop-blur-md flex items-center gap-2 cursor-pointer group shadow-[0_0_20px_rgba(168,85,247,0.2)]"
+                className="px-4 py-3.5 md:px-5 md:py-4 rounded-xl border border-white/10 bg-black-100/60 text-white-50 font-tech font-medium uppercase tracking-wider text-xs md:text-sm hover:text-white hover:border-white/25 transition-all duration-300 backdrop-blur-md flex items-center gap-1.5 cursor-pointer"
               >
-                <span>Get In Touch / CV</span>
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
+                <span>Get In Touch</span>
+                <span>→</span>
               </button>
             </div>
           </div>
