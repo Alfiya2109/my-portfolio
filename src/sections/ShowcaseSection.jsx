@@ -11,7 +11,7 @@ const additionalProjects = [
     category: "Full-Stack FinTech & Banking Security",
     desc: "Full-stack UAE banking clearance letter generation & instant QR code validation portal built with React 19, NestJS 12, Tailwind CSS 4, Prisma ORM, and JWT TOTP security.",
     tags: ["React 19", "NestJS", "Tailwind CSS 4", "Prisma ORM", "JWT TOTP"],
-    link: "https://github.com/Alfiya2109/my-portfolio",
+    link: "https://github.com/Alfiya2109/amlak-finance-frontend",
     badge: "FinTech Banking",
     isGitHub: true,
   },

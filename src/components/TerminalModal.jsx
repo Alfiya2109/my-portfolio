@@ -90,7 +90,7 @@ Direct link: /Alfiya_Khan_Resume.pdf`,
           text: `⭐ Featured Projects & Live Deployments:
   1. Amlak Finance — UAE Digital Bank Liability Clearance Portal
      → Tech: React 19, NestJS 12, Tailwind CSS 4, Prisma ORM, JWT TOTP
-     → GitHub: https://github.com/Alfiya2109/my-portfolio
+     → GitHub: https://github.com/Alfiya2109/amlak-finance-frontend
 
   2. Enterprise AI Chatbot & Document Management System (DMS)
      → Live DMS UI: https://iqra-ai-chatbot-aozl.vercel.app/train
