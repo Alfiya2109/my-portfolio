@@ -7,6 +7,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 const additionalProjects = [
   {
+    title: "Amlak Finance — UAE Digital Bank Liability Clearance Portal",
+    category: "Full-Stack FinTech & Banking Security",
+    desc: "Full-stack UAE banking clearance letter generation & instant QR code validation portal built with React 19, NestJS 12, Tailwind CSS 4, Prisma ORM, and JWT TOTP security.",
+    tags: ["React 19", "NestJS", "Tailwind CSS 4", "Prisma ORM", "JWT TOTP"],
+    link: "https://github.com/Alfiya2109/my-portfolio",
+    badge: "FinTech Banking",
+    isGitHub: true,
+  },
+  {
     title: "Enterprise AI Chatbot & DMS Portal",
     category: "Enterprise AI & RAG Architecture",
     desc: "Production-grade multi-document RAG assistant featuring vector indexing, intelligent PDF OCR parsing, citation streaming, and semantic search.",
